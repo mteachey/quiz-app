@@ -5,21 +5,65 @@
   <title>Quiz - Are You a Yogi?</title>
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya:400,500|Amatic+SC|Lato|Merriweather|Merriweather+Sans|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Shopping List</h1>
-        <form id="js-shopping-list-form">
-            <label for="shopping-list-entry">Add an item</label>
-            <input type="text" name="shopping-list-entry" class="js-shopping-list-entry" placeholder="e.g., broccoli">
-            <button type="submit">Add item</button>
-        </form>
-        <ul class="shopping-list js-shopping-list">
-        </ul>
-    </div>
+    <body>
+        <main class="container">
+          <header class="header">       
+            <h1>Are You a Yogi?</h1>
+            <button class="begin-button">
+                <span class="button-label">Begin</span>
+            </button>
+         </header>
+         <section class="progress-section" role="contentinfo" aria-label="Your progress and score">
+            <div class="your-progress">
+              <p>Question: <span class="question-count">0 </span>of 10</p>
+            </div>
+            <div class="your-score">
+               <p>Score: <span class="current-score">0 </span>out of <span class="question-count">0</span></p>
+            </div>
+        </section>
+        <section role="region" aria-label="Quiz image question and choices" class="quiz-content-container question-content">
+            <img alt="silhouette image of a classic yoga pose" class="question-image" src="_images/warrior-300x300.jpg" />
+            <form class="question-form">
+                <fieldset>   
+                    <legend class="question">Q1: How many classic yoga poses are there?</legend>
+                    <input type="radio" id="q1answer1" name="answer1" value="1">
+                    <label for="q1answer1">1</label>
+                    <br>
+                    <input type="radio" id="q1answer2" name="answer1" value="84"> 
+                    <label for="q1answer2">84</label>
+                    <br>
+                    <input type="radio" id="q1answer3" name="answer1" value="101"> 
+                    <label for="q1answer3">101</label>
+                    <br>
+                    <input type="radio" id="q1answer4" name="answer1" value="0"> 
+                    <label for="q1answer4">yogis don’t count, they just let them be
+                    </label>
+                    <br>
+                    <button type="submit">Seek the Truth</button>
+                </fieldset>
+            </form>
+        </section>
+        <section role="contentinfo" aria-label="Quiz answer and button to proceed" class="quiz-content-container answer-content js-section-toggle__display">
+                <div class="right-wrong-section">
+                    <img alt="image of happy yogi" src="_images/right-answer-yogi.jpg" >
+                    <p class="graded-answer">Yes, you got it right!</p>
+                </div>                
+                <p>There are 84 classic yoga poses.</p>
+                <img alt="graphic of all 84 classic yoga poses" src="_images/yoga-poses-all.jpg"/>
+                <button class="next-question-button">
+                    <span class="button-label">Next</span>
+                </button>
+                <button class="start-over-button js-button-toggle__display">
+                    <span class="button-label">Start Over</span>
+                </button>
+        </section>        
+    </main>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
