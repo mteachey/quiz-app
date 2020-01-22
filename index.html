@@ -15,11 +15,13 @@
         <main class="container">
           <header class="header">       
             <h1>Are You a Yogi?</h1>
+            <h2>The h1 text and "begin button will change when a user leaves the start page (for the button) and gets to the last page (text) , it will return to the start text and "begin" button, if a user hits the "start over" button on the last page.</h2>
             <button class="begin-button">
                 <span class="button-label">Begin</span>
             </button>
          </header>
          <section class="progress-section" role="contentinfo" aria-label="Your progress and score">
+             <h2>This section will dynamicall keep track of the score and question count and will reset to 0 for both when a user hits the "start over" button on the last page.</h2>
             <div class="your-progress">
               <p>Question: <span class="question-count">0 </span>of 10</p>
             </div>
@@ -27,7 +29,8 @@
                <p>Score: <span class="current-score">0 </span>out of <span class="question-count">0</span></p>
             </div>
         </section>
-        <section role="region" aria-label="Quiz image question and choices" class="quiz-content-container question-content">
+        <section role="region" aria-label="Quiz image question and choices" class="content-container js-section-toggle__display">
+            <h2>This is the structure of the question section, it will be dynamically generated after a user hits the "begin" button on the start page or after hitting "next" on an answer page</h2>
             <img alt="silhouette image of a classic yoga pose" class="question-image" src="http://paintedskycreative.com/_external-images/EF/warrior-300x300.jpg" />
             <form class="question-form">
                 <fieldset>   
@@ -35,13 +38,13 @@
                     <input type="radio" id="q1answer1" name="answer1" value="1">
                     <label for="q1answer1">1</label>
                     <br>
-                    <input type="radio" id="q1answer2" name="answer1" value="84"> 
+                    <input type="radio" id="q1answer2" name="answer1" value="2"> 
                     <label for="q1answer2">84</label>
                     <br>
-                    <input type="radio" id="q1answer3" name="answer1" value="101"> 
+                    <input type="radio" id="q1answer3" name="answer1" value="3"> 
                     <label for="q1answer3">101</label>
                     <br>
-                    <input type="radio" id="q1answer4" name="answer1" value="0"> 
+                    <input type="radio" id="q1answer4" name="answer1" value="4"> 
                     <label for="q1answer4">yogis don’t count, they just let them be
                     </label>
                     <br>
@@ -49,7 +52,8 @@
                 </fieldset>
             </form>
         </section>
-        <section role="contentinfo" aria-label="Quiz answer and button to proceed" class="quiz-content-container answer-content js-section-toggle__display">
+        <section role="contentinfo" aria-label="Quiz answer and button to proceed" class="content-container js-section-toggle__display">
+            <h2>This is the structure of the answer section, it will be dynamically generated after a user hits the "seek the truth" button on a question page</h2>
                 <div role="region" aria-label="Did you get the question correct?" class="right-wrong-section">
                     <img alt="image of happy yogi" src="http://paintedskycreative.com/_external-images/EF/right-answer-yogi.jpg" >
                     <p class="graded-answer">Yes, you got it right! Don’t let it strengthen your ego though. Enjoy it and then let it go.
@@ -60,6 +64,10 @@
                 <button class="next-question-button">
                     <span class="button-label">Next</span>
                 </button>
+        </section>      
+        <section role="contentinfo" aria-label="Last page displaying your score and rating" class="content-container js-section-toggle__display">
+            <h2>This is the structure of the last page. It will be dynamically generated after a user hits the "next" button on the last answer page. This event will also change the text of the h1 to something like "Breathe deep. Go meditate for 5 minutes - remember - anyone and everyone can do yoga….I think you need it.".</h2>
+                <img alt="image of a stressed out person who could use some yoga" src="http://paintedskycreative.com/_external-images/EF/wrong-answer-not-a-yogi.jpg"/>
                 <button class="start-over-button js-button-toggle__display">
                     <span class="button-label">Start Over</span>
                 </button>
