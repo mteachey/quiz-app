@@ -95,7 +95,7 @@ header, section {
 }
 
 .content-container {
-    /*padding-top: 0;*/
+  overflow:hidden;
 }
 
 .text-align-center{
