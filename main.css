@@ -265,3 +265,49 @@ on the same line */
      margin:.1em;
    }
  }
+
+ input[type='radio'] {
+  opacity: 0; 
+}
+
+.question-form input[type="radio"]+label{
+  position:relative;
+  padding: 0 3rem 0 2rem;
+}
+
+ .question-form label::before {
+  height: 22px;
+  width: 22px;
+  left: 0;
+  top: 1px;
+  background: #f4f4f4;
+  border-radius: 50%;
+  border: 1px solid #bbbbbb;
+}
+.question-form label::after {
+  left: -2px;
+  top: 0px;
+  width: 13px;
+  height: 13px;
+  border: 7px solid #FF8205;
+  border-radius: 50%;
+}
+
+.question-form label::before, .question-form label::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+}
+
+.question-form input[type='radio'] + label::after {
+  content: none;
+}
+
+.question-form input[type='radio']:checked + label::after {
+  content: '';
+}
+
+.question-form input[type='radio']:focus + label::before {
+  outline: auto 2px Highlight;
+  outline: auto 5px -webkit-focus-ring-color;
+}
