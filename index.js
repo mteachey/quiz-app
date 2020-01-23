@@ -36,9 +36,9 @@ const QSAS = [
        { 
         question : 'Who the heck is Ganesh?',
         answerOne : 'buddha dressed up as an elephant',
-        answerTwo : 'the god of compassion, tenderness, and love. the personification of divine love and joy',
-        answerThree : 'the Goddess of love and good fortune. She is is perhaps the most sought-after throughout the world. She is called upon for harmony in relationships, wealth, beauty, power, fame, royalty, recognition, and regal grace. He is the origin of each and every one of us',
-        answerFour : 'the remover of obstacles, the patron of arts and sciences and the deva of intellect and wisdom. the god of beginnings',
+        answerTwo : 'The god of compassion, tenderness, and love. The personification of divine love and joy',
+        answerThree : 'The Goddess of love and good fortune. She is is perhaps the most sought-after deity throughout the world. She is called upon for harmony in relationships, wealth, beauty, power, fame, royalty, recognition, and regal grace.',
+        answerFour : 'The remover of obstacles, the patron of arts and sciences and the deva of intellect and wisdom. The god of beginnings',
         correctAnswer : 4,
         correctAnswerCopy : 'Although he is known by many attributes, Ganesha\'s elephant head makes him easy to identify. Ganesha is widely revered as the remover of obstacles, the patron of arts and sciences and the deva of intellect and wisdom. As the god of beginnings, he is honoured at the start of rites and ceremonies.',
         imgSrc : 'http://paintedskycreative.com/_external-images/EF/ganesh-300x300.jpg',
@@ -57,10 +57,10 @@ const QSAS = [
        },
        { 
         question : 'What are some benefits of pigeon pose pictured above?',
-        answerOne : 'tones the abdominal muscles while strengthening the low back. Helps relieve stress. Improves digestion',
-        answerTwo : 'Physically, it stretches the hip flexors, opens gluteus minimus and maximus, and relaxes the piriformis and psoas muscles. Internally, it stimulates the abdominal organs and aids in digestion. Mentally, this pose challenges our ability to sit with uncomfortable situations.',
-        answerThree : 'The pose helps strengthen the shoulder muscles, spine and legs, and at the same time, it increases the flexibility in the shoulders, hips, legs and feet. Practicing this pose will stretch out your body and increase your core strength. Improves focus, balance and stability.Energizes the entire body',
-        answerFour : 'helps you fly like a bird and gives you a liking to parks',
+        answerOne : 'This pose tones the abdominal muscles while strengthening the low back. This pose helps relieve stress and improves digestion',
+        answerTwo : 'Physically, this pose stretches the hip flexors, opens gluteus minimus and maximus, and relaxes the piriformis and psoas muscles. Internally, it stimulates the abdominal organs and aids in digestion. Mentally, this pose challenges our ability to sit with uncomfortable situations.',
+        answerThree : 'This pose helps strengthen the shoulder muscles, spine and legs, and at the same time, it increases the flexibility in the shoulders, hips, legs and feet. Practicing this pose will stretch out your body and increase your core strength. Improves focus, balance and stability.Energizes the entire body',
+        answerFour : 'This pose helps you fly like a bird and gives you a liking to parks',
         correctAnswer : 2,
         correctAnswerCopy : 'Pigeon pose stretches the hip flexors, opens gluteus minimus and maximus, and relaxes the piriformis and psoas muscles. Internally, it stimulates the abdominal organs and aids in digestion. Mentally, this pose challenges our ability to sit with uncomfortable situations.',
         imgSrc : 'http://paintedskycreative.com/_external-images/EF/pigeon-pose-300x300.jpg',
@@ -73,7 +73,7 @@ const QSAS = [
         answerThree : 'mountain pose or Tadasana',
         answerFour : 'tree pose or Vrikshasana (you are lost in your monkey mind if you pick this one)',
         correctAnswer : 1,
-        correctAnswerCopy : 'Dancer pose or Natarajasana requires and builds full-body strength, flexibility, and coordination. It opens the shoulders, chest, and hips, as it stretches and strengthens the thighs, ankles, and abdomen. This pose develops greater flexibility in your spine, shoulders, and hamstrings. It also stretches the entire front of the body, while strengthening the back muscles, which improves posture. Most notably, King Dancer improves your ability to concentrate and focus. By remaining calm while balancing and back-bending, you will learn how to focus your thoughts. This will improve your poise and grace in everyday life.',
+        correctAnswerCopy : 'Dancer pose or Natarajasana requires and builds full-body strength, flexibility, and coordination. It opens the shoulders, chest, and hips, as it stretches and strengthens the thighs, ankles, and abdomen. This pose develops greater flexibility in your spine, shoulders, and hamstrings. It also stretches the entire front of the body, while strengthening the back muscles, which improves posture. Most notably, Dancer improves your ability to concentrate and focus. By remaining calm while balancing and back-bending, you will learn how to focus your thoughts. This will improve your poise and grace in everyday life.',
         imgSrc : 'http://paintedskycreative.com/_external-images/EF/dancer-300x300.png',
         imgAlt : 'image of a silhouette of a person standing on one leg but leaned forward with the other leg bent and raised behind them.',
        },
@@ -81,10 +81,10 @@ const QSAS = [
         question : 'What is the name of the pose shown above?',
         answerOne : 'boat pose or Navasana',
         answerTwo : 'mountain pose or Tadasana',
-        answerThree : 'warrior II pose or Virabhadrasana 2',
+        answerThree : 'warrior II pose or Virabhadrasana II',
         answerFour : 'tree pose or Vrikshasana (you are lost in your monkey mind if you pick this one)',
         correctAnswer : 3,
-        correctAnswerCopy : 'Warrior II or Virabhadrasana II (veer-uh-buh-DRAHS-uh-nuh) A powerful stretch for the legs, groins, and chest, Virabhadrasana II also increases stamina. It helps to relieve backaches, and stimulates healthy digestion. This is a deep hip-opening pose that strengthens the muscles in the thighs and buttocks. It tones the abdomen, ankles, and arches of the feet. This pose also opens the chest and shoulders, improving breathing capacity and increasing circulation throughout the body. It is also known to be therapeutic for flat feet, sciatica, infertility, and osteoporosis. More than just a physical posture, Warrior II increases your ability to concentrate. As you hone your gaze, you direct your mind clearly and with intention. Distractions disappear and your energy becomes powerful and focused.',
+        correctAnswerCopy : 'Warrior II or Virabhadrasana II (veer-uh-buh-DRAHS-uh-nuh) is a powerful stretch for the legs, groins, and chest. Virabhadrasana II also increases stamina. It helps to relieve backaches, and stimulates healthy digestion. This is a deep hip-opening pose that strengthens the muscles in the thighs and buttocks. It tones the abdomen, ankles, and arches of the feet. This pose also opens the chest and shoulders, improving breathing capacity and increasing circulation throughout the body. It is also known to be therapeutic for flat feet, sciatica, infertility, and osteoporosis. More than just a physical posture, Warrior II increases your ability to concentrate. As you hone your gaze, you direct your mind clearly and with intention. Distractions disappear and your energy becomes powerful and focused.',
         imgSrc : 'http://paintedskycreative.com/_external-images/EF/warrior-300x300.jpg',
         imgAlt : 'image of a silhouette of a person standing with one leg bent to 90degrees in front of them the other leg straight behind them. Their hands are rasied horizontally in Tee, with the bent leg corresponding arm facing forward and the other arm facing back. The body is turned to the side and the head is looking over the forward arm',
        },
@@ -106,7 +106,7 @@ const QSAS = [
         answerThree : 'being able to fold yourself into a pretzel',
         answerFour : 'the desire to live in a cave meditating all day',
         correctAnswer : 1,
-        correctAnswerCopy : 'Yoga is not about being able to fold yourself into a pretzel or to want to live like a hermatic monk in a cave somewhere. Yoga\'s goal is to liberate oneself from worldly suffering.  The Sanskirt  word yoga means to yoke or bind, and is often interpreted as \'union\'. The union of the individual soul with God.  Yoga is \'the progressive quieting of the fluctuations of the mind.\' Through dedicated practice and the cultivation of detachment, we will stop identifying with the thoughts, feelings, and sensations that can cause us so much emotional pain (suffering), and we will open to an experience of our true self.',
+        correctAnswerCopy : 'Yoga is not about being able to fold yourself into a pretzel or wanting to live like a hermatic monk in a cave somewhere. Yoga\'s goal is to liberate oneself from worldly suffering.  The Sanskirt  word yoga means to yoke or bind, and is often interpreted as \'union\'. The union of the individual soul with God.  Yoga is \'the progressive quieting of the fluctuations of the mind.\' Through dedicated practice and the cultivation of detachment, you can stop identifying with the thoughts, feelings, and sensations that can cause you so much emotional pain (suffering), and  open to an experience of one\'s true self.',
         imgSrc : 'http://paintedskycreative.com/_external-images/EF/ultimate-buddha-300x300.jpg',
         imgAlt : 'image of a silhouette of a person standing with one leg bent to 90degrees in front of them the other leg straight behind them. Their hands are rasied horizontally in Tee, with the bent leg corresponding arm facing forward and the other arm facing back. The body is turned to the side and the head is looking over the forward arm',
        },
@@ -244,10 +244,10 @@ function renderLastInfo(finalScore){
         finalCopy = 'Breathe deep. <br> Go meditate for 5 minutes - remember - anyone and everyone can do yoga&hellip;you may need it.';
         } 
     return `
-    <div role="region" aria-label="Your final score" >
+    <div class="heading" role="region" aria-label="Your final score" >
        <img alt="${finalImgAlt}" src="${finalImgSrc}" >
         <p class="text-align-center">You got ${countScore.score} correct out of ${countScore.count}</p>
-        <h1 class="margin-bottom-small">${finalHeading}</h1>
+        <h1 class="margin-bottom-small ">${finalHeading}</h1>
         <p class="graded-answer text-align-center">${finalCopy}</p>
     </div>                
     <button class="start-over-button">
@@ -291,6 +291,16 @@ function scrollToProgress(){
     $('html, body').animate(
             {
               scrollTop: $('.progress-section').offset().top,
+            },
+            500,
+            'linear'
+    )
+}
+
+function scrollToTop(){
+    $('html, body').animate(
+            {
+              scrollTop: $('.heading').offset().top,
             },
             500,
             'linear'
@@ -356,7 +366,8 @@ function resetValues(){
 function handleLastPage(){
     let numberOfQuestions = QSAS.length;    
     $('.content-container').on('click', '.start-over-button', function(event) {
-        resetValues();     
+        resetValues(); 
+        scrollToTop();    
         renderPage();             
       });
       console.log('`handlelastPage` ran');
@@ -387,9 +398,13 @@ function questionProgress(){
     console.log('`questionProgress` ran');
 }
 
+
 function handleQuiz() {   
     scrollToProgress(); 
+    scrollToTop();
     displayScoreProgress();
+    questionProgress();
+    scoreProgress();
     gradeAnswer();
     renderQuestionItem();
     renderQuestionPage();
@@ -398,15 +413,13 @@ function handleQuiz() {
     renderAnswerPage();
     renderLastInfo();
     renderLastPage();
-    renderPage();
-    handleStart();
-    handleNextTypeOfPage();
     handleNext();
     handleAnswerSubmit();
+    handleNextTypeOfPage();
     handleLastPage();
-    scoreProgress();
-    questionProgress();
+    handleStart();
     resetValues();
+    renderPage();
   }
   
   // when the page loads, call `handleQuiz`
