@@ -205,10 +205,14 @@ on the same line */
 
 @media only screen and (max-width: 900px){
     body{
-      font-size:30px;
+      font-size:25px;
     }
     main{
         max-width:500px;
+    }
+
+    header, section {
+      margin-bottom: 0;
     }
 
     .progress-section div {
@@ -217,27 +221,36 @@ on the same line */
 
   .progress-section {
       flex-direction:column;
-      align-items:center;      
+      align-items:center;    
+      margin-bottom: .5em;  
   }
   } 
 
 
 @media only screen and (max-width: 600px){
-     body{
-      font-size:40px;
-    }
-
     main{
         max-width:350px;
         text-align:center;
     }
-
-    .progress-section div {
-        width: 90%;
+    img{
+      max-width:250px;
     }
 
-    .progress-section {
-        flex-direction:column;
-        align-items:center;      
-    }
   }
+
+  @media only screen and (max-width: 350px){
+  
+   main{
+       max-width:275px;
+       text-align:center;
+   }
+
+   header, section {
+    padding: .5em .1em;
+}
+ 
+
+   h1{
+     margin:0;
+   }
+ }
