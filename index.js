@@ -290,6 +290,10 @@ function renderPage(correct) {
 function handleAnswerSubmit(questions){
         $('.content-container').on('submit', '.question-form', function(event) {
         event.preventDefault();
+
+        let isChecked = $('input[name=answer1]').prop('checked');
+
+        if(isChecked){
         const answerValue = $('input[name=answer1]:checked', 
         '.question-form').val();      
         let gradedAnswer = gradeAnswer(answerValue);      
@@ -306,10 +310,8 @@ function handleAnswerSubmit(questions){
             500,
             'linear'
           )
-
-
-
-
+        }
+        else {alert('Please make a selection')}
     });
     console.log('`handleAnswerSubmit` ran');
 }
