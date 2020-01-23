@@ -224,6 +224,17 @@ on the same line */
       align-items:center;    
       margin-bottom: .5em;  
   }
+/*increase the translation up*/
+
+  @keyframes up {
+    0% {transform: translateY(0);animation-timing-function: ease-in-out;}
+    
+    100% {transform:translateY(-300px);}
+  }
+  .up {
+    animation-name: up;
+  }
+
   } 
 
 
@@ -251,6 +262,6 @@ on the same line */
  
 
    h1{
-     margin:0;
+     margin:.1em;
    }
  }

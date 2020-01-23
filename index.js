@@ -298,6 +298,18 @@ function handleAnswerSubmit(questions){
         }      
         countScore.nextTypeOfPage = 'answer';      
         renderPage(gradedAnswer);       
+
+        $('html, body').animate(
+            {
+              scrollTop: $('.progress-section').offset().top,
+            },
+            500,
+            'linear'
+          )
+
+
+
+
     });
     console.log('`handleAnswerSubmit` ran');
 }
