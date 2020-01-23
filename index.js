@@ -149,24 +149,24 @@ function renderStartPage(){
     console.log('`renderStartPage` ran');
 };
 
-function renderQuestionItem(questions){
+function renderQuestionItem(){
     console.log('`renderQuestionItem` ran');
     return `
-     <img alt="${questions[countScore.index].imgAlt}" class="question-image" src="${questions[countScore.index].imgSrc}" />
+     <img alt="${QSAS[countScore.index].imgAlt}" class="question-image" src="${QSAS[countScore.index].imgSrc}" />
      <form class="question-form">
            <fieldset role="radiogroup">   
-               <legend class="question">Q${countScore.count}: ${questions[countScore.index].question}</legend>
+               <legend class="question">Q${countScore.count}: ${QSAS[countScore.index].question}</legend>
                <input type="radio" id="q1answer1" name="answer1" value="1">
-               <label for="q1answer1">${questions[countScore.index].answerOne}</label>
+               <label for="q1answer1">${QSAS[countScore.index].answerOne}</label>
                <br>
                <input type="radio" id="q1answer2" name="answer1" value="2"> 
-               <label for="q1answer2">${questions[countScore.index].answerTwo}</label>
+               <label for="q1answer2">${QSAS[countScore.index].answerTwo}</label>
                <br>
                <input type="radio" id="q1answer3" name="answer1" value="3"> 
-               <label for="q1answer3">${questions[countScore.index].answerThree}</label>
+               <label for="q1answer3">${QSAS[countScore.index].answerThree}</label>
                <br>
                <input type="radio" id="q1answer4" name="answer1" value="4"> 
-               <label for="q1answer4">${questions[countScore.index].answerFour}</label>
+               <label for="q1answer4">${QSAS[countScore.index].answerFour}</label>
                <br>
                <button type="submit">Seek the Truth</button>
            </fieldset>
@@ -186,7 +186,7 @@ function renderQuestionPage(){
 }; 
 
 
-function renderAnswerItem(questions,answerInput){
+function renderAnswerItem(answerInput){
     console.log('`renderAnswerItem` ran');
     if (answerInput){
         gradedAnswer = 'Yes, you got it right! Don\'t let it strengthen your ego though.<br> Enjoy it and then let it go.';
@@ -208,8 +208,8 @@ function renderAnswerItem(questions,answerInput){
      <img alt="${imgAnswerAlt}" class="question-image" src="${imgAnswerSrc}" />
         <p class="graded-answer text-align-center ">${gradedAnswer}</p>
     </div>                    
-     <img alt="${questions[countScore.index].imgAlt}" class="question-image ${divClassUp}" src="${questions[countScore.index].imgSrc}" />
-     <p class="${divClassUp}">${questions[countScore.index].correctAnswerCopy}</p>
+     <img alt="${QSAS[countScore.index].imgAlt}" class="question-image ${divClassUp}" src="${QSAS[countScore.index].imgSrc}" />
+     <p class="${divClassUp}">${QSAS[countScore.index].correctAnswerCopy}</p>
      <button class="next-question-button ${divClassUp}">
           <span class="button-label">Next</span>
      </button>
@@ -220,7 +220,7 @@ function renderAnswerPage(correct){
     //display correct score and count and insert that HTML into the DOM after header
     const currentProgress = displayScoreProgress();
     $('.progress-section').html(currentProgress);
-    const question =  renderAnswerItem(QSAS,correct);
+    const question =  renderAnswerItem(correct);
     $('.content-container').html(question);
     console.log(`renderAnswerpage ran`);
 }; 
@@ -287,36 +287,41 @@ function renderPage(correct) {
 
 /************END Rendering Functions************/
 
-function handleAnswerSubmit(questions){
-        $('.content-container').on('submit', '.question-form', function(event) {
-        event.preventDefault();
+function scrollToProgress(){
+    $('html, body').animate(
+            {
+              scrollTop: $('.progress-section').offset().top,
+            },
+            500,
+            'linear'
+    )
+}
 
-        let isChecked = $('input[name=answer1]').prop('checked');
-
-        if(isChecked){
-        const answerValue = $('input[name=answer1]:checked', 
-        '.question-form').val();      
+function noSkipProgress(answerValue){
+    if(answerValue){
         let gradedAnswer = gradeAnswer(answerValue);      
         if (gradedAnswer === true){
             scoreProgress();
         }      
         countScore.nextTypeOfPage = 'answer';      
         renderPage(gradedAnswer);       
+        scrollToProgress();        
+    }
+    else {alert('Please select a choice');console.log(`nope ${answerValue}`)}  
+}
 
-        $('html, body').animate(
-            {
-              scrollTop: $('.progress-section').offset().top,
-            },
-            500,
-            'linear'
-          )
-        }
-        else {alert('Please make a selection')}
-    });
+function handleAnswerSubmit(){
+        $('.content-container').on('submit', '.question-form', function(event) {
+        event.preventDefault();
+
+            const answerValue = $('input[name=answer1]:checked', 
+            '.question-form').val();     
+            noSkipProgress(answerValue);    
+       });
     console.log('`handleAnswerSubmit` ran');
 }
 
-function handleStart(questions){
+function handleStart(){
     $('header').on('click', '.begin-button', function(event) {
         countScore.count++;
         countScore.nextTypeOfPage = 'question';
@@ -325,32 +330,39 @@ function handleStart(questions){
       console.log('`handleStart` ran');
 }
 
+function handleNextTypeOfPage(numberOfQuestions){
+    if ((countScore.count) === (numberOfQuestions + 1))    
+    {countScore.nextTypeOfPage = 'lastPage';}           
+    else{countScore.nextTypeOfPage = 'question';}
+}
 
-function handleNext(questions){
+function handleNext(){
     let numberOfQuestions = QSAS.length ;    
     $('.content-container').on('click', '.next-question-button', function(event) {
         questionProgress();
-        if ((countScore.count) === (numberOfQuestions + 1))    
-            {countScore.nextTypeOfPage = 'lastPage';}           
-        else{countScore.nextTypeOfPage = 'question';}
+        handleNextTypeOfPage(numberOfQuestions);
         renderPage();             
       });
       console.log('`handleNext` ran');
 }
 
-function handleLastPage(questions){
+function resetValues(){
+    countScore.count = 0;
+    countScore.index = 0;
+    countScore.score = 0;
+    countScore.nextTypeOfPage = 'startPage'; 
+}
+
+function handleLastPage(){
     let numberOfQuestions = QSAS.length;    
     $('.content-container').on('click', '.start-over-button', function(event) {
-        countScore.count = 0;
-        countScore.index = 0;
-        countScore.score = 0;
-        countScore.nextTypeOfPage = 'startPage';       
+        resetValues();     
         renderPage();             
       });
       console.log('`handlelastPage` ran');
 }
 
-console.log(QSAS[countScore.index].correctAnswer);
+//console.log(QSAS[countScore.index].correctAnswer);
 function gradeAnswer(guess){
     console.log('`gradeAnswer` ran');
     if (QSAS[countScore.index].correctAnswer == guess){
@@ -375,36 +387,26 @@ function questionProgress(){
     console.log('`questionProgress` ran');
 }
 
-//Keep track of nextPage to render 
-/*function typeOfPageRender(){
-    //when submit, next, start, or start over is submitted (return or enter), changes the countScore.nextTypeOfPage 
-    let numberOfQuestions = QSAS.length;
-    
-    if (countScore.nextTypeOfPage === 'question')
-    {       
-        return countScore.nextTypeOfPage = 'answer';
-    }
-    if(countScore.nextTypeOfPage = 'startPage' || (countScore.nextTypeOfPage === 'answer' && countScore.count != numberOfQuestions) ){
-        return countScore.nextTypeOfPage = 'question';
-    }
-    if(countScore.nextTypeOfPage === 'answer' && countScore.count == numberOfQuestions){
-        return countScore.nextTypeOfPage = 'lastPage';
-    }
-    if(countScore.nextTypeOfPage === 'lastPage'){
-        return countScore.nextTypeOfPage = 'startPage'
-    }
-    console.log('`typeOfPageRender` ran');
-}*/
-
-
-function handleQuiz() {    
-    handleLastPage();
+function handleQuiz() {   
+    scrollToProgress(); 
     displayScoreProgress();
     gradeAnswer();
+    renderQuestionItem();
+    renderQuestionPage();
+    renderStartPage();
+    renderAnswerItem();
+    renderAnswerPage();
+    renderLastInfo();
+    renderLastPage();
     renderPage();
     handleStart();
+    handleNextTypeOfPage();
     handleNext();
-    handleAnswerSubmit(QSAS);
+    handleAnswerSubmit();
+    handleLastPage();
+    scoreProgress();
+    questionProgress();
+    resetValues();
   }
   
   // when the page loads, call `handleQuiz`
