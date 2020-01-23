@@ -246,7 +246,7 @@ function renderLastInfo(finalScore){
     return `
     <div role="region" aria-label="Your final score" >
        <img alt="${finalImgAlt}" src="${finalImgSrc}" >
-        <p class="text-align-center">You got ${countScore.score} correct</p>
+        <p class="text-align-center">You got ${countScore.score} correct out of ${countScore.count}</p>
         <h1 class="margin-bottom-small">${finalHeading}</h1>
         <p class="graded-answer text-align-center">${finalCopy}</p>
     </div>                

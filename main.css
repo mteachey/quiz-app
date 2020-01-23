@@ -204,12 +204,29 @@ on the same line */
   }
 
 @media only screen and (max-width: 900px){
-  main{
-      max-width:500px;
+    body{
+      font-size:30px;
+    }
+    main{
+        max-width:500px;
+    }
+
+    .progress-section div {
+      width: 90%;
   }
-}
+
+  .progress-section {
+      flex-direction:column;
+      align-items:center;      
+  }
+  } 
+
 
 @media only screen and (max-width: 600px){
+     body{
+      font-size:40px;
+    }
+
     main{
         max-width:350px;
         text-align:center;
@@ -220,9 +237,7 @@ on the same line */
     }
 
     .progress-section {
-        display: flex;
         flex-direction:column;
-        align-items:center;
-        
+        align-items:center;      
     }
   }
