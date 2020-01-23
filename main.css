@@ -4,6 +4,11 @@ font-family: 'Merriweather Sans', sans-serif;
 font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Lato', sans-serif;
 */
+/* possible colors
+orange in buddha #FF8205
+yellow in buddha #FFCF37
+purple of lotus #3D0069
+*/
 * {
   box-sizing: border-box;
 }
@@ -11,37 +16,111 @@ font-family: 'Lato', sans-serif;
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
+  
 }
   
 h1, h2,h3{
   font-family: 'Merriweather Sans', sans-serif;
+  color: #3D0069;
+  text-align:center;
 }
 
-h2 {
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 1.5;
-  font-style: italic;
-  font-family: 'Nunito', sans-serif;
+h1 {
+    margin: .5em 0;
+    margin-bottom: 0;
+}
+
+.margin-bottom-small{
+    margin-bottom:.5em;
+}
+
+p { 
+    margin-block-start: .5em;
+    margin-block-end: .5em;  
+}
+
+img {
+    display: block;
+    margin: auto;
 }
 
 button, input[type="text"] {
-  padding: 5px;
-  margin-top: 20px;
+  padding: 7px 10px;
+  margin: auto;
+  margin-top: .5em;
+  display: block;
+  border-color:#fff;
+  color:#fff;
+  border-radius: 2px;
+  background-color: #3D0069; 
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+
 }
 
 button:hover {
   cursor: pointer;
+  background-color: #fff; 
+  color:#3D0069;
+  border: 2px solid #3D0069;
+  border-radius: 2px;
+  padding: 8px 11px;
 }
 
-header, section{
-  border: 1px solid grey;
-  margin-bottom:20px;
-  padding:20px;
+
+main{
+    border: 1px solid #FF8205;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+header, section {
+    margin-bottom: .5em;
+    padding: .5em 1em;
+}
+
+.progress-section{
+    display:flex;
+    justify-content:center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.progress-section div{
+    width: 30%;
+}
+
+.progress-section p{
+    text-align: center;
+}
+
+.content-container {
+    /*padding-top: 0;*/
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.graded-answer {
+    margin-block-start: 0;
+    margin-bottom: 1.5em;
 }
 
 .question-image{
     max-width:200px;
+}
+
+form.question-form {
+    text-align: left;
+}
+
+fieldset{
+    border: 2px solid #3D0069;
+}
+
+legend {
+    padding: 9px;
 }
 
 /* Place radios and their labels
@@ -53,13 +132,97 @@ on the same line */
   margin-top: 1rem;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+.question-form input[type="radio"]+label {
+    width: 90%;
 }
 
-
-
-.js-section-toggle__display, .js-button-toggle__display{
-    /*display:none;*/  /*commented out to see section in grey wireframe*/
+.js-intro-toggle__display{
+    display:none;  
 }
+
+.animated {
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    /*animation-iteration-count: infinite;*/
+}
+
+.animated-up{
+    animation-delay: 2.5s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.animated-fade-in{
+    animation-duration: 4s;
+    animation-fill-mode: both;
+}
+
+.animated-fade-out{
+    animation-delay: 2.5s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+ 
+
+ @keyframes hinge {
+    0% {transform: rotate(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+    20%, 60% {transform: rotate(80deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+    40% {transform: rotate(60deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+    80% {transform: rotate(60deg) translateY(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+    100% {transform: translateY(7000px);}
+  }
+  .hinge {
+    animation-name: hinge;
+  }
+
+  @keyframes up {
+    0% {transform: translateY(0);animation-timing-function: ease-in-out;}
+    
+    100% {transform:translateY(-200px);}
+  }
+  .up {
+    animation-name: up;
+  }
+
+  @keyframes fade-in {
+    0% {opacity:0; animation-timing-function: ease-in-out;}
+    
+    100% {opacity:1}
+  }
+  .fade-in {
+    animation-name: fade-in;
+  }
+
+  @keyframes fade-out {
+    0% {opacity:1; animation-timing-function: ease-in-out;}
+    
+    100% {opacity:0}
+  }
+  .fade-out {
+    animation-name: fade-out;
+  }
+
+@media only screen and (max-width: 900px){
+  main{
+      max-width:500px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+    main{
+        max-width:350px;
+        text-align:center;
+    }
+
+    .progress-section div {
+        width: 90%;
+    }
+
+    .progress-section {
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        
+    }
+  }
