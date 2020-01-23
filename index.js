@@ -123,7 +123,7 @@ const countScore = {
 
 /************Rendering Functions************/
 function displayScoreProgress(){
-    console.log('`displayScoreProgress` ran');
+    
     return `
      <div class="your-progress">
        <p>Question: <span class="question-count">${countScore.count} </span>of 10</p>
@@ -137,20 +137,20 @@ function displayScoreProgress(){
 function renderStartPage(){
     $('header').removeClass('js-intro-toggle__display');
     $('.start-button-label').text('Begin');   
-    //display first image in header
+    
     $('.begin-button').removeClass('js-intro-toggle__display');
     $('.intro-image').removeClass("js-intro-toggle__display");     
-    //display correct score and count and insert that HTML into the DOM after header
+    
     const currentProgress = displayScoreProgress();
     $('.progress-section').removeClass('js-intro-toggle__display');
     $('.progress-section').html(currentProgress);
     $('.content-container').html('');
     
-    console.log('`renderStartPage` ran');
+    
 };
 
 function renderQuestionItem(){
-    console.log('`renderQuestionItem` ran');
+    
     return `
      <img alt="${QSAS[countScore.index].imgAlt}" class="question-image" src="${QSAS[countScore.index].imgSrc}" />
      <form class="question-form">
@@ -175,7 +175,7 @@ function renderQuestionItem(){
 };
 
 function renderQuestionPage(){
-  //display correct score and count and insert that HTML into the DOM after header
+  
   const currentProgress = displayScoreProgress();
   $('.progress-section').html(currentProgress);
   $('.begin-button').addClass('js-intro-toggle__display');
@@ -185,9 +185,8 @@ function renderQuestionPage(){
     
 }; 
 
-
 function renderAnswerItem(answerInput){
-    console.log('`renderAnswerItem` ran');
+   
     if (answerInput){
         gradedAnswer = 'Yes, you got it right! Don\'t let it strengthen your ego though.<br> Enjoy it and then let it go.';
         imgAnswerSrc="http://paintedskycreative.com/_external-images/EF/right-answer-yogi.jpg";
@@ -217,16 +216,16 @@ function renderAnswerItem(answerInput){
 };
 
 function renderAnswerPage(correct){
-    //display correct score and count and insert that HTML into the DOM after header
+    
     const currentProgress = displayScoreProgress();
     $('.progress-section').html(currentProgress);
     const question =  renderAnswerItem(correct);
     $('.content-container').html(question);
-    console.log(`renderAnswerpage ran`);
+    
 }; 
 
 function renderLastInfo(finalScore){
-    console.log('`renderLastPage` ran');
+    
     let finalImgSrc = '';
     let finalImgAlt = '';
     let finalCopy = '';
@@ -257,18 +256,17 @@ function renderLastInfo(finalScore){
 }
 
 function renderLastPage(){
-  //display correct score and count and insert that HTML into the DOM after header
-  
+
   $('header').addClass('js-intro-toggle__display');
   $('.progress-section').addClass('js-intro-toggle__display');
   const finalSay =  renderLastInfo(countScore.score);
   $('.content-container').html(finalSay);
-   console.log(`renderLastPage ran`);   
+   
 };
 
 
 function renderPage(correct) {
-    // this function will be responsible for rendering the correct question page in the DOM
+    // this function will be responsible for rendering the correct page in the DOM
     
     if (countScore.count === 0){ 
         renderStartPage();     
@@ -281,7 +279,7 @@ function renderPage(correct) {
     else if (countScore.nextTypeOfPage === 'lastPage'){
        renderLastPage();  
     }
-        console.log('`renderPage` ran');
+      
     }
 
 
@@ -317,7 +315,7 @@ function noSkipProgress(answerValue){
         renderPage(gradedAnswer);       
         scrollToProgress();        
     }
-    else {alert('Please select a choice');console.log(`nope ${answerValue}`)}  
+    else {alert('Please select a choice');}  
 }
 
 function handleAnswerSubmit(){
@@ -328,7 +326,7 @@ function handleAnswerSubmit(){
             '.question-form').val();     
             noSkipProgress(answerValue);    
        });
-    console.log('`handleAnswerSubmit` ran');
+    
 }
 
 function handleStart(){
@@ -337,7 +335,7 @@ function handleStart(){
         countScore.nextTypeOfPage = 'question';
         renderPage();                 
       });     
-      console.log('`handleStart` ran');
+      
 }
 
 function handleNextTypeOfPage(numberOfQuestions){
@@ -353,7 +351,7 @@ function handleNext(){
         handleNextTypeOfPage(numberOfQuestions);
         renderPage();             
       });
-      console.log('`handleNext` ran');
+      
 }
 
 function resetValues(){
@@ -370,10 +368,10 @@ function handleLastPage(){
         scrollToTop();    
         renderPage();             
       });
-      console.log('`handlelastPage` ran');
+      
 }
 
-//console.log(QSAS[countScore.index].correctAnswer);
+
 function gradeAnswer(guess){
     console.log('`gradeAnswer` ran');
     if (QSAS[countScore.index].correctAnswer == guess){
@@ -387,15 +385,15 @@ function gradeAnswer(guess){
 //Keeps track of score 
 function scoreProgress(){
     countScore.score++;
-    console.log('`scoreProgress` ran');
+    
 }
 
 //Keep track of question you are on 
 function questionProgress(){
-    //when submit button is submitted (return or enter), adds one to countScore.count
+    
     countScore.count++;
     countScore.index++;
-    console.log('`questionProgress` ran');
+    
 }
 
 
